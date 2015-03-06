@@ -1,0 +1,9 @@
+<div class="partial" id="loginForm">
+  <link rel="stylesheet" type="text/css" href="./app/partials/login/form/login-form.css" />
+  <form>
+    <input type="text" ng-model="loginForm.firstName">
+    <input type="text" ng-model="loginForm.lastName">
+    <input type="submit" ng-click="loginForm.login()" class="button small">
+  </form>
+  <div>{{loginForm.fullName}}</div>
+</div>

@@ -1,0 +1,5 @@
+.partial#user-new #user{
+  border: 1px solid #ccc;
+  background: #EEE;
+  padding:20px;
+}

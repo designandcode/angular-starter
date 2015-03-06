@@ -1,0 +1,41 @@
+<html>
+<head>
+	<title>App</title>
+    <link rel="stylesheet" type="text/css" href="./app/media/lib/foundation-5.5.1/css/foundation.css">
+    <link rel="stylesheet" type="text/css" href="./app/media/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./app/media/css/layout.css">
+    <script src="./lib/angular/angular.js"></script>
+    <script src="./lib/angular/angular-sanitize.min.js"></script>
+    <script src="./lib/angular/angular-storage.js"></script>
+    <script src="./lib/angular/angular-route.js"></script>
+    <script src="./app/app.js"></script>
+    <script src="./app/routes.js"></script>
+    <!-- partials -->
+    <script src="./app/partials/login/login-directives.js"></script>
+    <script src="./app/partials/user/user-directives.js"></script>
+    <script src="./app/partials/header/header-directives.js"></script>
+    <!-- helpers -->
+    <script src="./app/helpers/url/urlService.js"></script>
+    <!-- models -->
+    <script src="./app/models/permission.js"></script>
+    <script src="./app/models/user.js"></script>
+    <script src="./app/models/auth.js"></script>
+</head>
+<body id="main">
+  <header>
+    <div class="container">
+      <h1>Hello from the App! <span><header-nav /></span></h1>
+    </div>
+  </header>
+  <div class="container">
+    <div id="view">
+      <ng-view />
+    </div>
+  </div>
+  <script type="text/javascript">
+    angular.element(document).ready(function(){
+      angular.bootstrap(document, ['app']);
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<div class="partial">
+  <div>Current User: {{current.firstName}} &lt;{{current.email}}&gt;</div>
+  <div id="user"  ng-show="permissions.user.show(user.id)">
+    <p>First name: {{user.firstName}}</p>
+    <p>Last name:  {{user.lastName}}</p>
+    <p>Email:  {{user.email}}</p>
+    <p>
+      <span ng-show="permissions.user.edit(user.id)"><a href="{{urls.user.edit(user.id)}}">Edit </a></span> 
+      <span ng-show="permissions.user.delete(user.id)"><a href="{{urls.user.delete(user.id)}}">Delete </a></span>
+    </p>
+  </div>
+  <div id="user" ng-show="!permissions.user.show(user.id)">
+    <p>Page Not Found</p>
+  </div>
+</div>

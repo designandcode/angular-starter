@@ -1,0 +1,15 @@
+<div class="partial">
+  <div id="user-delete" ng-show="permissions.user.delete(user.id)">
+    <h2>Are you sure you want to delete?</h2>
+    <p>First name: {{user.firstName}}</p>
+    <p>Last name:  {{user.lastName}}</p>
+    <p>Email:  {{user.email}}</p>
+    <p>
+      <span><button ng-click="action.delete()" class="button small alert">Delete</button></span>
+    </p>
+    <p><a href="{{urls.user.view()}}">Back</a></p>
+  </div>
+  <div id="user-delete" ng-show="!permissions.user.delete(user.id)">
+    <h2>Delete not possible!</h2>
+  </div>
+</div>

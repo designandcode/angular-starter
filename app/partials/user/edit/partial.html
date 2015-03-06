@@ -1,0 +1,51 @@
+<div class="partial" id="user-edit" ng-show="permissions.user.edit(user.id)">
+  <link rel="stylesheet" type="text/css" href="./app/partials/user/edit/user-edit.css">
+  <div>Current User: {{current.firstName}} &lt;{{current.email}}&gt;</div>
+  <div id="user" ng-show="permissions.user.edit(user.id)">
+    <p>First name: <input type="text" ng-model="user.firstName"></p>
+    <p>Last name:  <input type="text" ng-model="user.lastName"></p>
+    <p>Email:  <input type="text" ng-model="user.email"></p>
+    <p ng-show="permissions.user.create() && user.id != current.id">Permissions 
+      <br> 
+      Show 
+      <select ng-model="user.permissions.show">
+        <option>0</option>
+        <option>1</option>
+        <option>2</option>
+      </select>
+      <br> 
+      View 
+      <select ng-model="user.permissions.view">
+        <option>0</option>
+        <option>1</option>
+        <option>2</option>
+      </select>
+      <br> 
+      Edit 
+      <select ng-model="user.permissions.edit">
+        <option>0</option>
+        <option>1</option>
+        <option>2</option>
+      </select>
+      <br> 
+      Delete 
+      <select ng-model="user.permissions.delete">
+        <option>0</option>
+        <option>1</option>
+        <option>2</option>
+      </select>
+      <br> 
+      Create 
+      <select ng-model="user.permissions.create">
+        <option>0</option>
+        <option>1</option>
+        <option>2</option>
+      </select>
+    </p>
+    <p><input type="submit" ng-click="action.save()" class="button small"></p>
+    <p><a href="{{urls.user.show(user.id)}}">Back</a></p>
+  </div>
+  <div id="user" ng-show="!permissions.user.edit(user.id)">
+    <p>Page Not Found</p>
+  </div>
+</div>

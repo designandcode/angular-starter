@@ -1,0 +1,25 @@
+body{
+  
+}
+.container{
+  width:960px;
+  margin:0 auto;
+}
+#view{
+  width:50%;
+}
+/* partial/header/nav */
+.partial#header-nav{
+  float:right;
+}
+.partial#header-nav ul{
+  margin:0;
+  padding:0;  
+}
+.partial#header-nav > ul > li{
+  float:left;
+  list-style: none;
+}
+.partial#header-nav ul ul li{
+  list-style: none;
+}

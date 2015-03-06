@@ -1,0 +1,50 @@
+<div class="partial" id="user-new" ng-show="permissions.user.create()">
+  <link rel="stylesheet" type="text/css" href="./app/partials/user/new/user-new.css">
+  <div id="user">
+    <p>First name: <input type="text" ng-model="newUser.firstName"></p>
+    <p>Last name:  <input type="text" ng-model="newUser.lastName"></p>
+    <p>Email:  <input type="text" ng-model="newUser.email"></p>
+    <p>Permissions 
+      <br> 
+      Show 
+      <select ng-model="newUser.permissions.show">
+        <option>0</option>
+        <option>1</option>
+        <option>2</option>
+      </select>
+      <br> 
+      View 
+      <select ng-model="newUser.permissions.view">
+        <option>0</option>
+        <option>1</option>
+        <option>2</option>
+      </select>
+      <br> 
+      Edit 
+      <select ng-model="newUser.permissions.edit">
+        <option>0</option>
+        <option>1</option>
+        <option>2</option>
+      </select>
+      <br> 
+      Delete 
+      <select ng-model="newUser.permissions.delete">
+        <option>0</option>
+        <option>1</option>
+        <option>2</option>
+      </select>
+      <br> 
+      Create 
+      <select ng-model="newUser.permissions.create">
+        <option>0</option>
+        <option>1</option>
+        <option>2</option>
+      </select>
+    </p>
+    <p><input type="submit" ng-click="action.create()" class="button small"></p>
+    <p><a href="{{urls.user.view()}}">Back</a></p>
+  </div>
+  <div id="user" ng-show="!current">
+    <p>Page Not Found</p>
+  </div>
+</div>
