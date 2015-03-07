@@ -1,7 +1,7 @@
 <div class="partial" id="header-nav">
   <ul>
-    <!--li ng-show="state.loggedIn()"><a href="{{urls.home}}">Home</a></li-->
-    <li ng-show="state.loggedIn() && permissions.user.view()"><a href="{{urls.user.view()}}">Users</a></li>
+    <!--li ng-show="state.loggedIn()"><a href="{{urls.home}}">Home</a></li>
+    <li ng-show="state.loggedIn() && permissions.user.view()"><a href="{{urls.user.view()}}">Users</a></li-->
     <li ng-show="state.loggedIn()" ng-mouseenter="showExtra = true" ng-mouseleave="showExtra = false">
       {{current().firstName}} {{current().lastName}}
       <ul ng-show="showExtra == true">

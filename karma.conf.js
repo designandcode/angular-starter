@@ -20,15 +20,17 @@ module.exports = function(config) {
       "lib/angular/angular-storage.js",
       "lib/angular/angular-route.js",
       "lib/angular/angular-mocks.js",
+      "lib/angular/angular-lodash.js",
+      "lib/angular/angular-fuse.js",
       "app/app.js",
       "app/routes.js",
-      "app/models/auth.js",
-      "app/models/user.js",
-      "app/models/permission.js",
+      "app/models/*.js",
       "app/helpers/url/urlService.js",
       "test/app/*.js",
       "test/app/models/*.js",
-      "test/app/helpers/*.js"
+      "test/app/helpers/*/*.js",
+      "test/lib/angular/angular-lodashTest.js",
+      "test/lib/angular/angular-fuseTest.js"
     ],
 
 
