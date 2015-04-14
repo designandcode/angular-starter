@@ -8,7 +8,7 @@
     <script src="./lib/angular/angular-sanitize.min.js"></script>
     <script src="./lib/angular/angular-storage.js"></script>
     <script src="./lib/angular/angular-route.js"></script>
-    <script src="./lib/angular/angular-lodash.js"></script>
+    <script src="./lib/angular/angular-underscore.js"></script>
     <script src="./lib/angular/angular-fuse.js"></script>
     <script src="./app/app.js"></script>
     <script src="./app/routes.js"></script>
@@ -16,23 +16,27 @@
     <script src="./app/partials/login/login-directives.js"></script>
     <script src="./app/partials/user/user-directives.js"></script>
     <script src="./app/partials/header/header-directives.js"></script>
+    <script src="./app/partials/sneaker/sneaker-directives.js"></script>
+    <script src="./app/partials/watchlist/watchlist-directives.js"></script>
+    <script src="./app/partials/register/register-directives.js"></script>
     <!-- helpers -->
     <script src="./app/helpers/url/urlService.js"></script>
     <!-- models -->
     <script src="./app/models/permission.js"></script>
     <script src="./app/models/user.js"></script>
     <script src="./app/models/auth.js"></script>
+    <script src="./app/models/sneaker.js"></script>
+    <script src="./app/models/watchlist.js"></script>
 </head>
 <body id="main">
-  <header>
+  <!--header>
     <div class="container">
-      <h1>Sneaker Watcher <span><header-nav /></span></h1>
+      <div header-nav></div>
     </div>
-  </header>
+  </header-->
   <div class="container">
-    <div id="view">
-      <ng-view />
-    </div>
+    <div class="background"></div>
+    <div ng-view id="view"></div>
   </div>
   <script type="text/javascript">
     angular.element(document).ready(function(){

@@ -1,21 +1,17 @@
 app.service('urlService', [function(){
   var t = this;
   this.urls = {}
-  this.setUrls = function(obj){
-    for(i in obj){
-      t.urls[i] = {}
-      if(obj[i] !== null && typeof obj[i] === 'object'){
-        index = i;
-        t.urls[i]['view'] = function(){ return '#/'+ index.charAt(0).toUpperCase() + index.slice(1) + '/View' }
-        t.urls[i]['show'] = function(id){ return '#/'+ index.charAt(0).toUpperCase() + index.slice(1) + '/Show/' + id; }
-        t.urls[i]['edit'] = function(id){ return '#/'+ index.charAt(0).toUpperCase() + index.slice(1) + '/Edit/' + id; }
-        t.urls[i]['delete'] = function(id){ return '#/'+ index.charAt(0).toUpperCase() + index.slice(1) + '/Delete/' + id; }
-        t.urls[i]['new'] = function(){ return  '#/'+ index.charAt(0).toUpperCase() + index.slice(1) + '/New'; }
-      } else{
-        t.urls[i] = obj[i];
-      }
+  this.setUrl = function(name, url){
+    t.urls[name] = url;
+    if(url !== null && typeof url === 'object'){
+      t.urls[name]['view'] = function(){ return '#/'+ name.charAt(0).toUpperCase() + name.slice(1) + '/View' }
+      t.urls[name]['show'] = function(id){ return '#/'+ name.charAt(0).toUpperCase() + name.slice(1) + '/Show/' + id; }
+      t.urls[name]['edit'] = function(id){ return '#/'+ name.charAt(0).toUpperCase() + name.slice(1) + '/Edit/' + id; }
+      t.urls[name]['delete'] = function(id){ return '#/'+ name.charAt(0).toUpperCase() + name.slice(1) + '/Delete/' + id; }
+      t.urls[name]['new'] = function(){ return  '#/'+ name.charAt(0).toUpperCase() + name.slice(1) + '/New'; }
+    } else{
+      t.urls[name] = url;
     }
-    return t;
   }
   this.getUrls = function(){
     return t.urls;

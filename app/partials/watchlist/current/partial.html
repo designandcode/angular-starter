@@ -1,0 +1,10 @@
+<div class="partial" id="watchlist-current">
+  <h3>My Watchlist</h3>
+  <div class="search-results" ng-repeat="sneaker in tempWatchlist()">
+    <a ng-click="action.removeFromTempWatchlist(sneaker)">x</a> - {{sneaker}} - Login to add this to watchlist<!--span ng-click="action.removeFromWatchlist(sneaker)">Remove from Watchlist</span-->
+  </div>
+  <div class="search-results" ng-repeat="sneaker in localWatchlist()">
+    <a ng-click="action.removeFromWatchlist(sneaker)">x</a> - {{sneaker}}<!-- - <span ng-click="action.removeFromWatchlist(sneaker)">Remove from Watchlist</span-->
+  </div>
+  <div ng-show="!state.loggedIn()">Login to view Watchlist</div>
+</div>

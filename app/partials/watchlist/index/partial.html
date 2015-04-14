@@ -1,0 +1,10 @@
+<div class="partial" id="watchlist-index">
+  <h3>Watchlists</h3>
+  <div class="search-results" ng-repeat="watchlist in watchlists">
+    <ul>
+      <li>{{watchlist._id}}</li>
+      <li>{{watchlist.user_id}}</li>
+      <li><span ng-repeat="watched in watchlist.watchlist">{{watched}}</span></li>
+    </ul>
+  </div>
+</div>

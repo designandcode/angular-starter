@@ -18,6 +18,11 @@ describe("routesTest", function(){
     expect(route.routes['/User/New'].templateUrl).toEqual('./app/views/user/new.html');
     expect(route.routes['/User/Delete/:id'].templateUrl).toEqual('./app/views/user/delete.html');
     expect(route.routes['/404'].templateUrl).toEqual('./app/views/404/index.html');
-    expect(route.routes[null].redirectTo).toEqual('/404');
+    expect(route.routes['/Watchlist/View'].templateUrl).toEqual('./app/views/watchlist/index.html');
+    expect(route.routes['/Account/Login'].templateUrl).toEqual('./app/views/account/login.html');
+    expect(route.routes['/Account/Register'].templateUrl).toEqual('./app/views/account/register.html');
+    //expect(route.routes[''].redirectTo).toEqual('/Home');
+    //expect(route.routes['/'].redirectTo).toEqual('/Home');
+    //expect(route.routes['somepagethatdefinitelydoesntexist'].redirectTo).toEqual('/404');
   });
 });

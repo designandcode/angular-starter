@@ -1,11 +1,11 @@
-<div class="partial" id="user-edit" ng-show="permissions.user.edit(user.id)">
+<div class="partial" id="user-edit" ng-show="permissions.user.edit(user._id)">
   <link rel="stylesheet" type="text/css" href="./app/partials/user/edit/user-edit.css">
-  <div>Current User: {{current.firstName}} &lt;{{current.email}}&gt;</div>
-  <div id="user" ng-show="permissions.user.edit(user.id)">
-    <p>First name: <input type="text" ng-model="user.firstName"></p>
-    <p>Last name:  <input type="text" ng-model="user.lastName"></p>
+  <div>Current User: {{current.username}} &lt;{{current.email}}&gt;</div>
+  <div id="user" ng-show="permissions.user.edit(user._id)">
+    <p>Username: <input type="text" ng-model="user.username"></p>
+    <p>Password:  <input type="password" ng-model="user.password"></p>
     <p>Email:  <input type="text" ng-model="user.email"></p>
-    <p ng-show="permissions.user.create() && user.id != current.id">Permissions 
+    <p ng-show="permissions.user.create() && user._id != current._id">Permissions 
       <br> 
       Show 
       <select ng-model="user.permissions.show">
@@ -43,9 +43,9 @@
       </select>
     </p>
     <p><input type="submit" ng-click="action.save()" class="button small"></p>
-    <p><a href="{{urls.user.show(user.id)}}">Back</a></p>
+    <p><a href="{{urls.user.show(user._id)}}">Back</a></p>
   </div>
-  <div id="user" ng-show="!permissions.user.edit(user.id)">
+  <div id="user" ng-show="!permissions.user.edit(user._id)">
     <p>Page Not Found</p>
   </div>
 </div>

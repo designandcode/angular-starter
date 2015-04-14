@@ -1,15 +1,14 @@
 <div class="partial">
-  <div>Current User: {{current.firstName}} &lt;{{current.email}}&gt;</div>
-  <div id="user"  ng-show="permissions.user.show(user.id)">
-    <p>First name: {{user.firstName}}</p>
-    <p>Last name:  {{user.lastName}}</p>
+  <div>Current User: {{current.username}} &lt;{{current.email}}&gt;</div>
+  <div id="user"  ng-show="permissions.user.show(user._id)">
+    <p>Username: {{user.username}}</p>
     <p>Email:  {{user.email}}</p>
     <p>
-      <span ng-show="permissions.user.edit(user.id)"><a href="{{urls.user.edit(user.id)}}">Edit </a></span> 
-      <span ng-show="permissions.user.delete(user.id)"><a href="{{urls.user.delete(user.id)}}">Delete </a></span>
+      <span ng-show="permissions.user.edit(user._id)"><a href="{{urls.user.edit(user._id)}}">Edit </a></span> 
+      <span ng-show="permissions.user.delete(user._id)"><a href="{{urls.user.delete(user._id)}}">Delete </a></span>
     </p>
   </div>
-  <div id="user" ng-show="!permissions.user.show(user.id)">
+  <div id="user" ng-show="!permissions.user.show(user._id)">
     <p>Page Not Found</p>
   </div>
 </div>

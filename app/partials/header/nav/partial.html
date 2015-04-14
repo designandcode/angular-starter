@@ -1,13 +1,32 @@
-<div class="partial" id="header-nav">
-  <ul>
-    <!--li ng-show="state.loggedIn()"><a href="{{urls.home}}">Home</a></li>
-    <li ng-show="state.loggedIn() && permissions.user.view()"><a href="{{urls.user.view()}}">Users</a></li-->
-    <li ng-show="state.loggedIn()" ng-mouseenter="showExtra = true" ng-mouseleave="showExtra = false">
-      {{current().firstName}} {{current().lastName}}
-      <ul ng-show="showExtra == true">
-        <li><a href="{{urls.user.show(current().id)}}">Profile</a></li>
+<header class="partial">
+  <link rel="stylesheet" type="text/css" href="./app/partials/header/nav/header-nav.css">
+  <h1><span>SneakerWatcher</span> 
+    <div ng-show="!state.loggedIn()" id="header-nav" class="primary_nav_wrap">
+      <ul>
+        <li login-form-header></li>
+      </ul>
+    </div>
+    <div ng-show="state.loggedIn()" id="header-nav" class="primary_nav_wrap">
+    <ul>
+      <li ng-show="permissions.user.show(user._id)"><a href="{{urls.home}}">My Watchlist</a></li>
+      <li ng-show="permissions.user.create()"><a href="{{urls.user.view()}}">Users</a></li>
+      <li><a>{{current.username}}</a>
+      <ul id="user-admin">
+        <li ng-show="permissions.user.show(user._id)"><a href="{{urls.user.show(current._id)}}">Profile</a></li>
         <li><a href="#" ng-click="action.logout()">Logout</a></li>
-      </ul> 
-    </li>
-  </ul>  
-</div>
+      </ul>
+    </ul>
+      <!--ul>
+        <li ng-show="permissions.user.show(user._id)"><a href="{{urls.home}}">My Watchlist</a></li>
+        <li ng-show="permissions.user.create()"><a href="{{urls.user.view()}}">Users</a></li>
+        <li ng-show="loggedIn()" ng-mouseenter="showExtra = true" ng-mouseleave="showExtra = false">
+          {{current.username}}
+          <ul ng-show="showExtra == true;">
+            <li ng-show="permissions.user.show(user._id)"><a href="{{urls.user.show(current._id)}}">Profile</a></li>
+            <li><a href="#" ng-click="action.logout()">Logout</a></li>
+          </ul> 
+        </li>
+      </ul-->  
+    </div>
+  </h1>
+</header>

@@ -1,5 +1,26 @@
 <div class="partial" id="sneaker-search">
   <link rel="stylesheet" type="text/css" href="./app/partials/sneaker/search/sneaker-search.css">
-  <input type="text" ng-model="query.search.sneaker">
-  <div class="search-results" ng-model="query.results.sneaker"></div>
+  <input type="text" ng-model="query.search.sneaker" ng-keyup="action.search()">
+  <ul class="search-results small-block-grid-1 medium-block-grid-2 large-block-grid-3">
+    <li ng-repeat="sneaker in query.results.sneaker">
+      <ul>
+        <!--li><a href="{{urls.sneaker.show(sneaker.id)}}">{{sneaker.id}}</a></li-->
+        <li>
+          <img src="app/media/img/sport-blue-6-600.jpg" title="{{sneaker.name}}">
+          <span>{{sneaker.name}}</span>
+          <button ng-show="state.loggedIn() && state.notInWatchlist(sneaker.name)" ng-click="action.addToWatchlist(sneaker.name)" class="button expand">Watch +</button>
+          <button ng-show="state.loggedIn() && state.inWatchlist(sneaker.name)" ng-click="action.removeFromWatchlist(sneaker.name)" class="button expand secondary">Unwatch -</button>
+          <button ng-show="!state.loggedIn() && state.notInTempWatchlist(sneaker.name)" ng-click="action.addToTempWatchlist(sneaker.name)" class="button expand">Watch +</button>
+          <button ng-show="!state.loggedIn() && state.inTempWatchlist(sneaker.name)" ng-click="action.removeFromTempWatchlist(sneaker.name)" class="button expand secondary">Unwatch -</button>
+        </li>
+        <!--li>{{sneaker.name}}</li>
+        <li>{{sneaker.brand}}</li>
+        <li>
+          <span ng-repeat="tag in sneaker.series track by $index">{{tag}} </span>
+        </li>
+        <li ng-show="state.loggedIn()" ng-click="action.addToWatchlist(sneaker.name)">Add to Watchlist? + (New)</li>
+        <li ng-show="!state.loggedIn()" ng-click="action.addToTempWatchlist(sneaker.name)">Add to Watchlist? + (Temp)</li-->
+      </ul>      
+    </li>
+  </ul>
 </div>

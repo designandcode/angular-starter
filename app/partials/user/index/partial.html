@@ -1,10 +1,10 @@
 <div class="partial" id="user-index" ng-show="permissions.user.view()">
   <ul>
     <li ng-repeat="user in users">
-      {{user.firstName}}
-      <a ng-show="permissions.user.show(user.id)" href="{{urls.user.show(user.id)}}">Show</a>
-      <a ng-show="permissions.user.edit(user.id)" href="{{urls.user.edit(user.id)}}">Edit</a>
-      <a ng-show="permissions.user.delete(user.id)" href="{{urls.user.delete(user.id)}}">Delete</a>
+      {{user.username}}
+      <a ng-show="permissions.user.show(user._id)" href="{{urls.user.show(user._id)}}">Show</a>
+      <a ng-show="permissions.user.edit(user._id)" href="{{urls.user.edit(user._id)}}">Edit</a>
+      <a ng-show="permissions.user.delete(user._id)" href="{{urls.user.delete(user._id)}}">Delete</a>
     </li>
   </ul>
   <p ng-show="permissions.user.create()"><a href="{{urls.user.new()}}">New</a></p>

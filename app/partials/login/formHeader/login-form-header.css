@@ -1,0 +1,9 @@
+.partial#loginFormHeader form{
+  border: 1px solid #ccc;
+  background: #EEE;
+  padding:20px;
+  width:304px;
+  position: absolute;
+  z-index: 1000;
+  right:0;
+}

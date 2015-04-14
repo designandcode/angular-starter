@@ -1,0 +1,28 @@
+<div class="partial" id="loginFormHeader">
+  <link rel="stylesheet" type="text/css" href="./app/partials/login/formHeader/login-form-header.css" />
+  <div><a ng-show="!state.loggedIn()" ng-click="toggle('loginForms')">Login</a></div>
+  <div ng-show="!state.loggedIn() && state.loginForms">
+    <form ng-show="state.showLoginForm">
+      <input type="text" ng-model="loginForm.username" placeholder="username">
+      <input type="password" ng-model="loginForm.password" placeholder="password">
+      <button ng-click="loginForm.action.login()" class="button small">Login</button>
+      <a ng-click="toggle('registerForm')">Register</a>
+      <a ng-click="toggle('forgotForm')">Forgot</a>
+    </form>
+    <form ng-show="state.showRegisterForm" id="user">
+      <p>Username: <input type="text" ng-model="registerForm.username"></p>
+      <p>Password:  <input type="password" ng-model="registerForm.password"></p>
+      <p>Email:  <input type="text" ng-model="registerForm.email"></p>
+      <button ng-click="registerForm.action.register()" class="button small">Register</button>
+      <a ng-click="toggle('loginForm')">Login</a>
+      <a ng-click="toggle('forgotForm')">Forgot</a>
+    </form>
+    <form ng-show="state.forgotForm" id="forgot">
+      <p>Forgot Password: <input type="text" placeholder="email" ng-model="forgotForm.email"></p>
+      <button ng-click="forgotForm.action.forgot()" class="button small">Retrieve</button>
+      <a ng-click="toggle('loginForm')">Login</a>
+      <a ng-click="toggle('registerForm')">Register</a>
+    </form>
+    <!--div ng-show="state.showRegisterForm" register-form></div-->
+  </div>
+</div>

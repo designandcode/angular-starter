@@ -20,7 +20,7 @@ module.exports = function(config) {
       "lib/angular/angular-storage.js",
       "lib/angular/angular-route.js",
       "lib/angular/angular-mocks.js",
-      "lib/angular/angular-lodash.js",
+      "lib/angular/angular-underscore.js",
       "lib/angular/angular-fuse.js",
       "app/app.js",
       "app/routes.js",
@@ -29,7 +29,7 @@ module.exports = function(config) {
       "test/app/*.js",
       "test/app/models/*.js",
       "test/app/helpers/*/*.js",
-      "test/lib/angular/angular-lodashTest.js",
+      "test/lib/angular/angular-underscoreTest.js",
       "test/lib/angular/angular-fuseTest.js"
     ],
 

@@ -1,0 +1,22 @@
+#sneaker-search ul.search-results{
+  padding:0;
+  margin:0;
+  margin-left: -1.25rem;
+}
+#sneaker-search ul.search-results ul{
+  position: relative;
+}
+#sneaker-search ul.search-results ul span{
+  position: absolute;
+  left:0px;
+  bottom: 72px;
+  width: 100%;
+  padding:8px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color:#fff;
+}
+#sneaker-search li{
+  list-style: none;
+  padding:0;
+  margin:0;
+}

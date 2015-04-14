@@ -1,61 +1,75 @@
 // show
 app.directive('userShow', function(){
   return {
-    restrict: 'E',
+    restrict: 'A',
     scope: {},
     templateUrl: 'app/partials/user/show/partial.html',
-    controller: 'userCtlr',
-    replace: true
+    controller: 'userCtlr'
   }
 });
 // edit
 app.directive('userEdit', function(){
   return {
-    restrict: 'E',
+    restrict: 'A',
     scope: {},
     templateUrl: 'app/partials/user/edit/partial.html',
-    controller: 'userCtlr',
-    replace: true
+    controller: 'userCtlr'
   }
 });
 // view
 app.directive('userIndex', function(){
   return {
-    restrict: 'E',
+    restrict: 'A',
     scope: {},
     templateUrl: 'app/partials/user/index/partial.html',
-    controller: 'userCtlr',
-    replace: true
+    controller: 'userCtlr'
   }
 });
 // create
 app.directive('userNew', function(){
   return {
-    restrict: 'E',
+    restrict: 'A',
     scope: {},
     templateUrl: 'app/partials/user/new/partial.html',
-    controller: 'userCtlr',
-    replace: true
+    controller: 'userCtlr'
   }
 });
 // delete
 app.directive('userDelete', function(){
   return {
-    restrict: 'E',
+    restrict: 'A',
     scope: {},
     templateUrl: 'app/partials/user/delete/partial.html',
-    controller: 'userCtlr',
-    replace: true
+    controller: 'userCtlr'
   }
 });
 function userCtlr($scope, $routeParams, $location, permissionService, userService, urlService){
   var id = $routeParams.id ? $routeParams.id : null;
-  $scope.user = userService.getUser(id);
-  $scope.current = userService.getCurrent();
-  $scope.users = userService.getUsers();
-  $scope.permissions = {
-    user: $scope.user && permissionService.set($scope.current.permissions, $scope.current.id, $scope.user.id)
-  }
+  userService.getUser()
+    .then(function(result){
+      $scope.current = result;
+      $scope.permissions = {
+        user: permissionService.set($scope.current.permissions, $scope.current._id)
+      }
+    }, function(error){
+      console.log(error);
+    })
+  userService.getUser(id)
+    .then(function(result){
+      $scope.user = result;
+    }, function(error){
+      console.log(error);
+    })
+  userService.getUsers()
+    .then(function(result){
+      $scope.users = result;
+    }, function(error){
+      console.log(error);
+    })
+  //$scope.users = userService.getUsers();
+  //$scope.permissions = {
+  //  user: $scope.user && permissionService.set($scope.current.permissions, $scope.current.id, $scope.user.id)
+  //}
   $scope.urls = urlService.getUrls();
   /**
    *  View

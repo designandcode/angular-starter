@@ -1,9 +1,9 @@
-describe('angular-lodashTest', function(){  
+describe('angular-underscoreTest', function(){  
   beforeEach(module('app'));
   var _, window;
   beforeEach(inject(
-    function(_$__, _$window_){
-      _ = _$__;
+    function(___, _$window_){
+      _ = ___;
       window = _$window_;
     }
   ));
